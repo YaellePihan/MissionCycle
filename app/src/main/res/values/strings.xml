@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MissionCycle</string>
+    <string name="tv_apc_calendar_title">Selected date</string>
+    <string name="tv_apc_button_title">Did you take your pill ?</string>
+</resources>
