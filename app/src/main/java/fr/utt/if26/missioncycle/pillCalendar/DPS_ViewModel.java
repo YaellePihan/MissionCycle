@@ -55,7 +55,9 @@ public class DPS_ViewModel extends ViewModel {
 
     // -------------
 
-    public LiveData<User> getUser() { return this.currentUser;  }
+    public LiveData<User> getUser() {
+        return this.currentUser;
+    }
 
     // -------------
 
@@ -63,30 +65,30 @@ public class DPS_ViewModel extends ViewModel {
 
     // -------------
 
-    public LiveData<List<DailyPillStatus>> getDailyPillStatus(long userId) {
+    public LiveData<List<DailyPillStatus>> get_DPS(long userId) {
 
-        return dpsDataRepository.getDailyPillStatus(userId);
+        return dpsDataRepository.get_DPS(userId);
 
     }
 
-    public void createDailyPillStatus() {
+    public void create_DPS(long userId, String day, String hour, String pillStatus, Boolean is_protectedDay) {
 
         executor.execute(() -> {
 
-            dpsDataRepository.createDailyPillStatus(new DailyPillStatus());
+            dpsDataRepository.create_DPS(new DailyPillStatus(userId,day,hour,pillStatus,is_protectedDay));
 
         });
 
     }
 
-    public void deleteDailyPillStatus(long dpsId) {
+    public void delete_DPS(long dpsId) {
 
-        executor.execute(() -> dpsDataRepository.deleteDailyPillStatus(dpsId));
+        executor.execute(() -> dpsDataRepository.delete_DPS(dpsId));
 
     }
 
-    public void updateDailyPillStatus(DailyPillStatus dps) {
+    public void update_DPS(DailyPillStatus dps) {
 
-        executor.execute(() -> dpsDataRepository.updateDailyPillStatus(dps));
+        executor.execute(() -> dpsDataRepository.update_DPS(dps));
     }
 }

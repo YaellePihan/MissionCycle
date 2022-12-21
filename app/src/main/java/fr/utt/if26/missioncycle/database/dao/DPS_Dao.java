@@ -13,20 +13,20 @@ import java.util.List;
 import fr.utt.if26.missioncycle.models.DailyPillStatus;
 
 @Dao
-public interface DailyPillStatusDao {
+public interface DPS_Dao {
 
     @Query("SELECT * FROM DailyPillStatus WHERE userId = :userId")
-    LiveData<List<DailyPillStatus>> getDailyPillStatus(long userId);
+    LiveData<List<DailyPillStatus>> get_DPS(long userId);
 
     @Query("SELECT * FROM DailyPillStatus WHERE userId = :userId")
-    Cursor getDailyPillStatusWithCursor(long userId);
+    Cursor get_DPS_WithCursor(long userId);
 
     @Insert
-    long insertDailyPillStatus(DailyPillStatus dailyPillStatus);
+    long insert_DPS(DailyPillStatus dps);
 
     @Update
-    int updateDailyPillStatus(DailyPillStatus dailyPillStatus);
+    int update_DPS(DailyPillStatus dps);
 
     @Query("DELETE FROM DailyPillStatus WHERE id = :id")
-    int deleteDailyPillStatus(long id);
+    int delete_DPS(long id);
 }

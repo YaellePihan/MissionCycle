@@ -9,7 +9,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import java.util.concurrent.Executors;
 
-import fr.utt.if26.missioncycle.database.dao.DailyPillStatusDao;
+import fr.utt.if26.missioncycle.database.dao.DPS_Dao;
 import fr.utt.if26.missioncycle.database.dao.UserDao;
 import fr.utt.if26.missioncycle.models.DailyPillStatus;
 import fr.utt.if26.missioncycle.models.User;
@@ -23,7 +23,7 @@ public abstract class MissionCycleDatabase extends RoomDatabase {
 
     public abstract UserDao userDao();
 
-    public abstract DailyPillStatusDao dailyPillStatusDao();
+    public abstract DPS_Dao dailyPillStatusDao();
 
     // --- INSTANCE ---
 

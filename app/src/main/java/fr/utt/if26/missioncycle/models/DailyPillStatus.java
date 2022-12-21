@@ -1,5 +1,6 @@
 package fr.utt.if26.missioncycle.models;
 
+import androidx.annotation.Nullable;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
@@ -10,6 +11,7 @@ public class DailyPillStatus {
     private long id;
     private long userId;
     private String day; //transform in timestamp
+    @Nullable
     private String hour; //transform in timestamp
     private String pillStatus;
     private Boolean is_protectedDay;
@@ -17,7 +19,7 @@ public class DailyPillStatus {
     public DailyPillStatus() {
     }
 
-    public DailyPillStatus(long userId, String day, String hour, String pillStatus, Boolean is_protectedDay) {
+    public DailyPillStatus(long userId, String day, @Nullable String hour, String pillStatus, Boolean is_protectedDay) {
         this.userId = userId;
         this.day = day;
         this.hour = hour;
