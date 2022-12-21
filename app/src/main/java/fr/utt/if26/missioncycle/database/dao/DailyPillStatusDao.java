@@ -3,6 +3,7 @@ package fr.utt.if26.missioncycle.database.dao;
 import android.database.Cursor;
 
 import androidx.lifecycle.LiveData;
+import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
@@ -11,6 +12,7 @@ import java.util.List;
 
 import fr.utt.if26.missioncycle.models.DailyPillStatus;
 
+@Dao
 public interface DailyPillStatusDao {
 
     @Query("SELECT * FROM DailyPillStatus WHERE userId = :userId")
@@ -20,14 +22,11 @@ public interface DailyPillStatusDao {
     Cursor getDailyPillStatusWithCursor(long userId);
 
     @Insert
-
     long insertDailyPillStatus(DailyPillStatus dailyPillStatus);
 
     @Update
-
     int updateDailyPillStatus(DailyPillStatus dailyPillStatus);
 
     @Query("DELETE FROM DailyPillStatus WHERE id = :id")
-
     int deleteDailyPillStatus(long id);
 }

@@ -12,7 +12,7 @@ import fr.utt.if26.missioncycle.models.User;
 public interface UserDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
 
-    void createUser(User user);
+    void insertUser(User user);
 
     @Query("SELECT * FROM User WHERE id = :userId")
     LiveData<User> getUser(long userId);
